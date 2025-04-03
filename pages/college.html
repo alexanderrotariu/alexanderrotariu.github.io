@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Rotariu</title>
+    <link rel="icon" type="image/png" href="../images/sly-cane.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .experience-content {
+            padding: 120px 0 60px;
+            background-color: #f5f5f5;
+        }
+        
+        .experience-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .experience-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--sly-gold), var(--sly-accent));
+            border-radius: 2px;
+        }
+        
+        .experience-header h1 {
+            font-size: 2.5rem;
+            color: var(--sly-purple);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .experience-details {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(74, 43, 124, 0.15);
+            border: 1px solid rgba(74, 43, 124, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(74, 43, 124, 0.2);
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--sly-gold), var(--sly-accent));
+        }
+        
+        .experience-item h2 {
+            color: var(--sly-purple);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .experience-item .date {
+            color: var(--sly-gold);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .experience-item p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .experience-item ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+        
+        .experience-item li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .experience-item li::before {
+            content: "•";
+            color: var(--sly-gold);
+            position: absolute;
+            left: -1.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .experience-header h1 {
+                font-size: 2rem;
+            }
+            
+            .experience-item {
+                padding: 1.5rem;
+            }
+            
+            .experience-item h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <button class="reset-button">Reset</button>
+                <div class="coin-counter">
+                    <img src="../images/sly-coin.png" alt="Coin">
+                    <span>0</span>
+                </div>
+                <img src="../images/sly-cane.png" alt="Sly Cooper's Cane" class="cane">
+                <span class="logo-text">Alexander Rotariu</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active">Career</a>
+                    <div class="dropdown-content">
+                        <a href="ibm.html">IBM</a>
+                        <a href="plugpower.html">Plug Power</a>
+                        <a href="college.html">College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Passions</a>
+                    <div class="dropdown-content">
+                        <a href="pokemon.html">Pokémon</a>
+                        <a href="bouldering.html">Bouldering</a>
+                        <a href="gaming.html">Gaming</a>
+                        <a href="music.html">Music</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="experience-content">
+        <div class="container">
+            <div class="experience-header">
+                <h1>College Experience</h1>
+                <p>My academic journey and achievements in embedded systems and software engineering</p>
+            </div>
+
+            <div class="experience-details">
+                <div class="experience-item">
+                    <h2>Bachelor of Science in Computer Engineering</h2>
+                    <div class="date">2018 - 2022</div>
+                    <p>University Name</p>
+                    <ul>
+                        <li>Specialized in embedded systems and software engineering</li>
+                        <li>Graduated with honors (GPA: 3.62), IEEE Student Member, Dean's List</li>
+                        <li>Key coursework: Computer Architecure, Digital Logic, Hardware/Software Interface, VLSI, etc.</li>
+                        <li>Led software development for our senior capstone project (Solar Panel Light Tracking)</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h2>Pre-Capstone Tensile Testing Competition</h2>
+                    <ul>
+                        <li>Competed against students in the ECE department to design a tensile testing machine</li>
+                        <li>Measuring the tensile strength of a material</li>
+                        <li>Utilizes tension sensors, stepper motors, and an arduino microcontroller</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h2>Senior Capstone</h2>
+                    <ul>
+                        <li>Smart Home Automation System using Raspberry Pi</li>
+                        <li>Real-time Data Acquisition System for IoT Applications</li>
+                        <li>Embedded Linux-based Control System</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h2>Collegiate E-Sports Team (Overwatch 1 & 2)</h2>
+                    <ul>
+                        <li>Competed against other collegiate teams in the Northeast region and across the country</li>
+                        <li>Co-Captain, Coach, Flex DPS player, Top 500 consistently across the North American Region</li>
+                        <li>1st Place in SUNY league, 2 time 2nd place in ECAC (East Coast Athletic Conference)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>&copy; 2024 Alexander. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

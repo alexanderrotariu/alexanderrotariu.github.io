@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Rotariu</title>
+    <link rel="icon" type="image/png" href="../images/sly-cane.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .music-content {
+            padding: 120px 0 60px;
+            background-color: #f5f5f5;
+        }
+
+        .music-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .music-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--sly-gold), var(--sly-accent));
+            border-radius: 2px;
+        }
+
+        .music-header h1 {
+            font-size: 2.5rem;
+            color: var(--sly-purple);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .playlists-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .playlist-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(74, 43, 124, 0.15);
+            border: 1px solid rgba(74, 43, 124, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            min-height: 352px;
+            position: relative;
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        .playlist-card.loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(74, 43, 124, 0.2);
+        }
+        
+        .playlist-embed {
+            width: 100%;
+            height: 352px;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: block;
+        }
+
+        .playlist-embed.loaded {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .music-header h1 {
+                font-size: 2rem;
+            }
+
+            .playlists-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .playlist-card {
+                min-height: 352px;
+            }
+
+            .playlist-embed {
+                height: 352px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <button class="reset-button">Reset</button>
+                <div class="coin-counter">
+                    <img src="../images/sly-coin.png" alt="Coin">
+                    <span>0</span>
+                </div>
+                <img src="../images/sly-cane.png" alt="Sly Cooper's Cane" class="cane">
+                <span class="logo-text">Alexander Rotariu</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Career</a>
+                    <div class="dropdown-content">
+                        <a href="ibm.html">IBM</a>
+                        <a href="plugpower.html">Plug Power</a>
+                        <a href="college.html">College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="active">Passions</a>
+                    <div class="dropdown-content">
+                        <a href="pokemon.html">Pokémon</a>
+                        <a href="bouldering.html">Bouldering</a>
+                        <a href="gaming.html">Gaming</a>
+                        <a href="music.html">Music</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="music-content">
+        <div class="container">
+            <div class="music-header">
+                <h1>My Music</h1>
+                <p>A collection of my favorite playlists and music</p>
+            </div>
+
+            <div class="playlists-grid">
+                <!-- Add Spotify playlist embeds here -->
+                <div class="playlist-card loading">
+                    <iframe class="playlist-embed" 
+                            src="https://open.spotify.com/embed/playlist/3BHk849rWsWNb3i04GZSST?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="playlist-card loading">
+                    <iframe class="playlist-embed" 
+                            src="https://open.spotify.com/embed/playlist/66LLMAvG9Wvy0pmI4WpRwH?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="playlist-card loading">
+                    <iframe class="playlist-embed" 
+                            src="https://open.spotify.com/embed/playlist/1Y908qhSJNln0gLST1Favd?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="playlist-card loading">
+                    <iframe class="playlist-embed" 
+                            src="https://open.spotify.com/embed/playlist/3BN9WuK7d7IIKn0PjjmLMR?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="playlist-card loading">
+                    <iframe class="playlist-embed" 
+                            src="https://open.spotify.com/embed/playlist/4731NWqQS9cPOxNhvQossC?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="playlist-card loading">
+                    <iframe class="playlist-embed" 
+                            src="https://open.spotify.com/embed/playlist/0i7q0XbUjsCYxq32bDsZbS?utm_source=generator&theme=0"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>&copy; 2024 Alexander. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Handle playlist loading states
+        document.addEventListener('DOMContentLoaded', function() {
+            const playlistCards = document.querySelectorAll('.playlist-card');
+            
+            playlistCards.forEach(card => {
+                const iframe = card.querySelector('iframe');
+                
+                iframe.addEventListener('load', function() {
+                    card.classList.remove('loading');
+                    iframe.classList.add('loaded');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
