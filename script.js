@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
         this.classList.add(randomAnimation);
 
-        // 20% chance for coin collection
-        if (Math.random() < 0.2) {
+        // 50% chance for coin collection
+        if (Math.random() < 0.5) {
             // Create coin flash animation
             const coinFlash = document.createElement('img');
             coinFlash.src = coinPath;
@@ -145,4 +145,33 @@ document.addEventListener('DOMContentLoaded', function() {
             isAnimating = false;
         }, 1000);
     });
+});
+
+// RAWG API key - Replace with your API key
+const RAWG_API_KEY = '9cf3adba449c4fb6b41b215a0122af5a';
+
+// Function to fetch game covers
+async function fetchGameCovers() {
+    const gameImages = document.querySelectorAll('.game-image');
+    
+    for (const img of gameImages) {
+        const gameName = img.dataset.game;
+        try {
+            const response = await fetch(`https://api.rawg.io/api/games?key=${RAWG_API_KEY}&search=${encodeURIComponent(gameName)}&page_size=1`);
+            const data = await response.json();
+            
+            if (data.results && data.results.length > 0) {
+                const game = data.results[0];
+                img.src = game.background_image;
+                img.style.opacity = '1';
+            }
+        } catch (error) {
+            console.error(`Error fetching cover for ${gameName}:`, error);
+        }
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    fetchGameCovers();
 }); 
